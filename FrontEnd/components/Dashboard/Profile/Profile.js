@@ -33,9 +33,9 @@ const Profile = () => {
     return (
         <View style={styles.container}>
             <View style={{flexDirection: 'row', justifyContent:'flex-start'}}>
-            <View style={{ marginLeft: 30, flexDirection: 'row', justifyContent: 'flex-start' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
                 <EvilIcons name='user' style={{ color: 'black', fontSize: 23 }} />
-                <Text style={{ fontSize: 18, fontStyle: 'italic' }}>Profile</Text>
+                <Text style={{ fontSize: 18, fontStyle: 'italic', marginStart: 5 }}>Profile</Text>
             </View>
             <View >
             <MultiSelect
@@ -48,7 +48,7 @@ const Profile = () => {
                 data={data}
                 labelField="label"
                 valueField="value"
-                placeholder="Select item"
+                placeholder="Select Profile"
                 searchPlaceholder="Search..."
                 value={selected}
                 onChange={item => {

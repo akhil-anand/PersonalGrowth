@@ -4,6 +4,7 @@ import { BarChart } from 'react-native-chart-kit'
 import WorkSleepChartView from './WorkSleepChartView/WorkSleepChartView'
 import MeTime from './MeTime/MeTime'
 import Profile from './Profile/Profile'
+import Suggestions from './Suggestions/Suggestions'
 
 const Dashboard = ({navigation}) => {
  
@@ -15,6 +16,7 @@ const Dashboard = ({navigation}) => {
             <WorkSleepChartView />
             <MeTime />
             <Profile />
+            <Suggestions />
         </ScrollView>
         </View>
     )
