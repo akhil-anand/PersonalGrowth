@@ -1,13 +1,31 @@
 import { FlatList, ScrollView, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
-import React, { useEffect, useRef } from 'react'
-import { useScrollIntoView, wrapScrollView } from 'react-native-scroll-into-view'
+import React, { useEffect, useRef, useState } from 'react'
 
 const TimeLine = () => {
 
-    const taskRef = useRef([])
+    const [totalTasks, setTotalTasks] = useState([])
 
-    const CustomScrollView = wrapScrollView(ScrollView)
-    const scrollIntoView = useScrollIntoView()
+    const [scheduleData, setScheduleData] = useState({
+        work:{
+            start: '10 am',
+            end: '7 pm'
+        },
+        Sleep:{
+            start: '10 pm',
+            end: '6 am'
+        },
+    })
+
+    const updateSequentialHrs = () => {
+
+    }
+
+    useEffect(() => {
+        const tempData = generateSequentialHrs()
+        
+
+    }, [])
+    
 
     const generateSequentialHrs = () => {
         const tempData = new Array(12).fill(12)
@@ -31,26 +49,13 @@ const TimeLine = () => {
         </>
     }
 
-    const handleScroll = (event) => {
-        const positionX = event.nativeEvent.contentOffset.x;
-        const positionY = event.nativeEvent.contentOffset.y;
-        // console.log(positionX, positionY)
-    };
-
-    const handleScrollToView = (event, index) => {
-        console.log(taskRef[index])
-        scrollIntoView(taskRef[index].current)
-    }
-
     const getHrsItem = (value, index) => {
         const fromTime = value[0]
         const toTime = value[1]
         return (
-            <TouchableHighlight onPress={(event)=>{handleScrollToView(event, index)}}>
                 <View style={styles.item}>
                     <Text style={styles.title}>{fromTime + ' - ' + toTime}</Text>
                 </View>
-            </TouchableHighlight>
         )
     };
 
@@ -58,9 +63,8 @@ const TimeLine = () => {
         return generateSequentialHrs().map((item, index) => {
             return (
                 <>
-                    <View ref={(element) => {taskRef.current[index] = element}}>
-
-                        <Text>Tasks at time {item[0] + ' ' + item[1]}</Text>
+                    <View style={{borderRadius: 5, backgroundColor: 'coral', marginVertical:20, padding: 10}}>
+                        <Text style={{fontSize:18}}>Tasks at time {item[0] + ' - ' + item[1]}</Text>
                         {renderTimeLineTasks()}
                     </View>
                 </>
@@ -78,10 +82,10 @@ const TimeLine = () => {
                     renderItem={({ item, index }) => getHrsItem(item, index)}
                 />
             </View>
-            <CustomScrollView>
+            <ScrollView>
                 <Text>Sample</Text>
                 {getTasksUnderHrs()}
-            </CustomScrollView>
+            </ScrollView>
         </View>
     )
 }
