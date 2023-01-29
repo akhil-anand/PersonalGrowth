@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View, Button, ScrollView, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Button, ScrollView, Dimensions, useWindowDimensions } from 'react-native'
 import React, { useState } from 'react'
 import { BarChart } from 'react-native-chart-kit'
 
 const DashBoard = ({navigation}) => {
 
     const screenWidth = Dimensions.get("window").width;
+    const { height, width } = useWindowDimensions()
     const [chartData, setChartData] = useState({
         workTime: {
                 labels: ["Estimated", "Actual"],
@@ -56,6 +57,7 @@ const DashBoard = ({navigation}) => {
                 />
             </View>
             <View style={{ flexDirection: 'row', justifyContent: "space-around" }}>
+                <View style={{padding:5}}>
                 <BarChart
                   style={{
                     marginVertical: 8,
@@ -63,12 +65,16 @@ const DashBoard = ({navigation}) => {
                     // margin:20
                   }}
                   data={chartData?.workTime}
-                  width={screenWidth}
-                  height={220}
-                  yAxisLabel="$"
+                  width={width / 2.2}
+                  height={height / 3}
+                  yAxisLabel="hrs"
                   chartConfig={chartConfig}
-                  verticalLabelRotation={30}
+                  verticalLabelRotation={0}
+                  showValuesOnTopOfBars={true}
+                  fromZero={true}
+                //   verticalLabelRotation={30}
                 />
+                </View>
                 <BarChart
                   style={{
                     marginVertical: 8,
@@ -76,11 +82,13 @@ const DashBoard = ({navigation}) => {
                     // margin:20
                   }}
                   data={chartData?.sleepTime}
-                  width={screenWidth}
-                  height={220}
-                  yAxisLabel="$"
+                  width={width / 2.2}
+                  height={height / 3}
+                  yAxisLabel="hrs"
                   chartConfig={chartConfig}
-                  verticalLabelRotation={30}
+                  verticalLabelRotation={0}
+                  showValuesOnTopOfBars={true}
+                  fromZero={true}
                 />
             </View>
 
