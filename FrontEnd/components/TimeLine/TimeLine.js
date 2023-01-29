@@ -83,8 +83,8 @@ const TimeLine = () => {
     const generateSequentialHrs = () => {
         const tempData = new Array(12).fill(12)
 
-        const tempData1 = tempData.map((item, index) => [index ? index + ' pm' : '12 am', index + 1 + ' pm'])
-        const tempData2 = tempData.map((item, index) => [index ? index + ' am' : '12 pm', index + 1 + ' am'])
+        const tempData1 = tempData.map((item, index) => [index ? index + ' pm' : '12 am', index + 1 === 12 ? index + 1 + ' am' : index + 1 + ' pm'])
+        const tempData2 = tempData.map((item, index) => [index ? index + ' am' : '12 pm', index + 1 === 12 ? index + 1 + ' pm' : index + 1 + ' am'])
 
         return [...tempData1, ...tempData2]
     }
@@ -132,7 +132,8 @@ const TimeLine = () => {
             <View style={{backgroundColor: 'red', borderRadius: 10, paddingTop: 10}}>
                 <Text>Work Time</Text>
                 <FlatList
-                    data={[ ...totalTT.filter((item, index, arr) => item[2] === 'work' && item[3] < arr[0]?.[3] ) ,...totalTT.filter((item, index, arr) => item[2] === 'work' && item[3] > arr[0]?.[3] )]}
+                    // data={[ ...totalTT.filter((item, index, arr) => item[2] === 'work' && item[3] < arr[0]?.[3] ) ,...totalTT.filter((item, index, arr) => item[2] === 'work' && item[3] > arr[0]?.[3] )]}
+                    data={totalTT.filter((item, index, arr) => item[2] === 'work' )}
                     renderItem={({ item, index }) => getHrsItem(item, index)}
                 />
             </View>
