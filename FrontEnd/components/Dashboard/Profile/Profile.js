@@ -32,10 +32,12 @@ const Profile = () => {
 
     return (
         <View style={styles.container}>
-            <View style={{ marginLeft: 30, marginRight: 'auto', flexDirection: 'row', justifyContent: 'flex-start' }}>
+            <View style={{flexDirection: 'row', justifyContent:'flex-start'}}>
+            <View style={{ marginLeft: 30, flexDirection: 'row', justifyContent: 'flex-start' }}>
                 <EvilIcons name='user' style={{ color: 'black', fontSize: 23 }} />
                 <Text style={{ fontSize: 18 }}>Profile</Text>
             </View>
+            <View >
             <MultiSelect
                 style={styles.dropdown}
                 placeholderStyle={styles.placeholderStyle}
@@ -62,6 +64,8 @@ const Profile = () => {
                 )}
                 selectedStyle={styles.selectedStyle}
             />
+            </View>
+            </View>
             {renderProfileItems()}
         </View>
     )
@@ -73,12 +77,16 @@ const styles = StyleSheet.create({
     container: {
         // flex: 1,
         marginTop: 20,
+        width:500,
         backgroundColor: '#fff',
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center',
     },
     dropdown: {
         height: 50,
+        width: 200,
+        marginStart:20,
+        marginTop: -15,
         backgroundColor: 'transparent',
         borderBottomColor: 'gray',
         borderBottomWidth: 0.5,
