@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 const TimeLine = () => {
 
     const generateSequentialHrs = () => {
+        
         const tempData = new Array(12).fill(12)
 
         const tempData1 = tempData.map((item, index) => [index ? index : 12, index + 1])
