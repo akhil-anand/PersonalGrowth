@@ -11,28 +11,21 @@ export default function App() {
 
   const Stack = createNativeStackNavigator()
   return (
-    // <SafeAreaView style={styles.container}>
-    //   <Text>Welcome</Text>
-
-    // </SafeAreaView>
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app! Yeyy</Text>
-      <StatusBar style="auto" />
-      <NavigationContainer>
-      <Stack.Navigator initialRouteName="DaysHoursManagement">
+    <NavigationContainer>
+      <Stack.Navigator>
         <Stack.Screen
-        name="DayHoursManagement"
-        component={DayHoursManagment}
-        options={{title: 'Set your Day'}}
+          name="DayHoursManagement"
+          component={DayHoursManagment}
+          options={{ title: 'Set your Day' }}
         />
         <Stack.Screen
-        name="Dashboard"
-        component={Dashboard}
-        options={{title: 'Dashboard'}}
+          name="Dashboard"
+          component={Dashboard}
+          options={{ title: 'Dashboard' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
-    </View>
+
   );
 }
 
