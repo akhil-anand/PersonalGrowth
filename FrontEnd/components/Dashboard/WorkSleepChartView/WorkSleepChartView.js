@@ -71,7 +71,7 @@ const WorkSleepChartView = () => {
                         fromZero={true}
                     //   verticalLabelRotation={30}
                     />
-                    <Text>Work</Text>
+                    <Text style={{fontSize: 18}}>Work</Text>
                 </View>
                 <View style={{ padding: 50 }}>
                     <BarChart
@@ -89,7 +89,7 @@ const WorkSleepChartView = () => {
                         showValuesOnTopOfBars={true}
                         fromZero={true}
                     />
-                    <Text>Sleep</Text>
+                    <Text style={{fontSize: 18}}>Sleep</Text>
                 </View>
             </View>
         </View>
