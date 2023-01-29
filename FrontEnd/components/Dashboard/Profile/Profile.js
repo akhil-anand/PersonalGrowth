@@ -35,7 +35,7 @@ const Profile = () => {
             <View style={{flexDirection: 'row', justifyContent:'flex-start'}}>
             <View style={{ marginLeft: 30, flexDirection: 'row', justifyContent: 'flex-start' }}>
                 <EvilIcons name='user' style={{ color: 'black', fontSize: 23 }} />
-                <Text style={{ fontSize: 18 }}>Profile</Text>
+                <Text style={{ fontSize: 18, fontStyle: 'italic' }}>Profile</Text>
             </View>
             <View >
             <MultiSelect

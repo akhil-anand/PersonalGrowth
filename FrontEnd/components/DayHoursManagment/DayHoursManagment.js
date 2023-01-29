@@ -35,6 +35,7 @@ const DayHoursManagment = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+            <Text style={{fontSize:20, fontStyle: 'italic', marginBottom:20}}>Set Your Day</Text>
             <View>
                 <Text>Work</Text>
                 <Slider
