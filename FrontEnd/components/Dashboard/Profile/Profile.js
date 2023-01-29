@@ -16,10 +16,9 @@ const Profile = () => {
 
     const [profileType, setProfileType] = useState(['Travel'])
 
-    const [selected, setSelected] = useState([]);
+    const [selected, setSelected] = useState(['Travel']);
 
     const renderProfileItems = () => {
-        console.log(selected)
         return <>
             {selected?.includes('Travel') ? <Travel /> : null}
             {selected?.includes('Athelete') ? <Athelete /> : null}

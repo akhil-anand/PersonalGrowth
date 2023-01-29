@@ -6,18 +6,32 @@ import MeTime from './MeTime/MeTime'
 import Profile from './Profile/Profile'
 import Suggestions from './Suggestions/Suggestions'
 
-const Dashboard = ({navigation}) => {
- 
+const Dashboard = ({ navigation }) => {
+
 
     return (
         <View style={styles.container}>
-        <ScrollView contentContainerStyle={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
-            {/* <Text>DashBoard</Text> */}
-            <WorkSleepChartView />
-            <MeTime />
-            <Profile />
-            <Suggestions />
-        </ScrollView>
+            <View style={{ flexDirection: 'row', justifyContent: "center" }}>
+                <Button
+                    onPress={()=>{navigation.push('Dashboard')}}
+                    title="Dashboard"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+                <Button
+                    onPress={()=>{navigation.push('Timeline')}}
+                    title="Timeline"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+            </View>
+            <ScrollView contentContainerStyle={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+                {/* <Text>DashBoard</Text> */}
+                <WorkSleepChartView />
+                <MeTime />
+                <Profile />
+                <Suggestions />
+            </ScrollView>
         </View>
     )
 }

@@ -41,7 +41,7 @@ const DayHoursManagment = ({navigation}) => {
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={12}
+                    maximumValue={24}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"
@@ -55,7 +55,7 @@ const DayHoursManagment = ({navigation}) => {
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={12}
+                    maximumValue={24}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"
@@ -69,7 +69,7 @@ const DayHoursManagment = ({navigation}) => {
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={12}
+                    maximumValue={24}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"

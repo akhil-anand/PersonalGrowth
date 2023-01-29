@@ -39,20 +39,6 @@ const WorkSleepChartView = () => {
 
     return (
         <View>
-            <View style={{ flexDirection: 'row', justifyContent: "center" }}>
-                <Button
-                    // onPress={()=>{navigation.push('Dashboard')}}
-                    title="Dashboard"
-                    color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
-                />
-                <Button
-                    // onPress={()=>{navigation.push('Timeline')}}
-                    title="Timeline"
-                    color="#841584"
-                    accessibilityLabel="Learn more about this purple button"
-                />
-            </View>
             <View style={{ flexDirection: 'row', justifyContent: "space-around" }}>
                 <View style={{ padding: 50 }}>
                     <BarChart
