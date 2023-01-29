@@ -8,9 +8,7 @@ const DayHoursManagment = ({navigation}) => {
     const [currentSlider, setCurrentSlider] = useState(null)
 
     const handleHoursManagement = (value, type) => {
-        console.log(value, type)
         const otherTypes = Object.keys(hoursManagement).filter(item => item !== type)
-        console.log(otherTypes)
         if (currentSlider === type) {
             if (hoursManagement[otherTypes[0]] > 1) {
                 setHoursManagement(prevState => {

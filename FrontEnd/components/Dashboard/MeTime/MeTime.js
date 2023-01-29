@@ -9,7 +9,7 @@ const MeTime = () => {
     const { height, width } = useWindowDimensions()
   return (
     <View style={styles.container}>
-      <Text style={{marginLeft:30, marginRight:'auto', marginBottom:5, fontSize: 18}}>MeTime</Text>
+      <Text style={{marginLeft:30, marginRight:'auto', fontSize: 18}}>MeTime</Text>
       <View style={{...styles.MeTimeItems, width, minHeight: 100}}>
       <View style={{ flexDirection: 'row', justifyContent: "center", marginRight: 20 }}>
         <IonIcons name='game-controller-outline' style={{ color: 'red', fontSize: 20 }} />
@@ -32,7 +32,7 @@ export default MeTime
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',

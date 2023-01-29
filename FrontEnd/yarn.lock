@@ -1801,10 +1801,10 @@
   "resolved" "https://registry.npmjs.org/@react-native-community/masked-view/-/masked-view-0.1.11.tgz"
   "version" "0.1.11"
 
-"@react-native-community/slider@^4.4.1":
-  "integrity" "sha512-CLzwZyLlWfDYN4xj6Wwqm+HisF6dd+rq9pk6Cp+Auw0bm4eb4GLQNc29ILh051xHMe5Dhrd9+NBrbvaEujevkA=="
-  "resolved" "https://registry.npmjs.org/@react-native-community/slider/-/slider-4.4.1.tgz"
-  "version" "4.4.1"
+"@react-native-community/slider@4.2.4":
+  "integrity" "sha512-uY51UoipQW4ELnFWMU6rTHRc4EUYaW+Z1O9Teijej6NYVYdUcUKq+t7WeBGjMAEc1ipyooMeBqRXToWO5zAU2Q=="
+  "resolved" "https://registry.npmjs.org/@react-native-community/slider/-/slider-4.2.4.tgz"
+  "version" "4.2.4"
 
 "@react-native-masked-view/masked-view@0.2.8":
   "integrity" "sha512-+1holBPDF1yi/y0uc1WB6lA5tSNHhM7PpTMapT3ypvSnKQ9+C6sy/zfjxNxRA/llBQ1Ci6f94EaK56UCKs5lTA=="
@@ -1874,7 +1874,7 @@
     "hoist-non-react-statics" "^3.3.2"
     "react-native-safe-area-view" "^0.14.9"
 
-"@react-navigation/native@^6.0.0":
+"@react-navigation/native@^6.0.0", "@react-navigation/native@^6.1.2":
   "integrity" "sha512-qLUe0asHofr5EhxKjvUBJ9DrPPmR4535IEwmW3oU4DRb3cLbNysjajJKHL8kcYtqPvn9Bx9QZG2x0PMb2vN23A=="
   "resolved" "https://registry.npmjs.org/@react-navigation/native/-/native-6.1.2.tgz"
   "version" "6.1.2"
@@ -6690,7 +6690,7 @@
   "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.17.11", "lodash@^4.17.13", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.4", "lodash@^4.17.5", "lodash@>=3.5 <5":
+"lodash@*", "lodash@^4.17.11", "lodash@^4.17.13", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.4", "lodash@^4.17.5", "lodash@>=3.5 <5":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -8876,6 +8876,11 @@
     "jscodeshift" "^0.13.1"
     "nullthrows" "^1.1.1"
 
+"react-native-element-dropdown@^2.5.3":
+  "integrity" "sha512-Os4UtvGlqccV3lsiP5Qy4RPzqqyx7E6lYcn2/IRQZHwBA4NAQA2dul/BrQSwy3bhicCqmWtir7T1GeFmOZPPrQ=="
+  "resolved" "https://registry.npmjs.org/react-native-element-dropdown/-/react-native-element-dropdown-2.5.3.tgz"
+  "version" "2.5.3"
+
 "react-native-gesture-handler@>= 1.0.0", "react-native-gesture-handler@~2.8.0":
   "integrity" "sha512-poOSfz/w0IyD6Qwq7aaIRRfEaVTl1ecQFoyiIbpOpfNTjm2B1niY2FLrdVQIOtIOe+K9nH55Qal04nr4jGkHdQ=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.8.0.tgz"
@@ -8932,10 +8937,10 @@
   dependencies:
     "prop-types" "^15.5.6"
 
-"react-native-svg@^13.7.0", "react-native-svg@> 6.4.1":
-  "integrity" "sha512-WR5CIURvee5cAfvMhmdoeOjh1SC8KdLq5u5eFsz4pbYzCtIFClGSkLnNgkMSDMVV5LV0qQa4jeIk75ieIBzaDA=="
-  "resolved" "https://registry.npmjs.org/react-native-svg/-/react-native-svg-13.7.0.tgz"
-  "version" "13.7.0"
+"react-native-svg@> 6.4.1", "react-native-svg@13.4.0":
+  "integrity" "sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag=="
+  "resolved" "https://registry.npmjs.org/react-native-svg/-/react-native-svg-13.4.0.tgz"
+  "version" "13.4.0"
   dependencies:
     "css-select" "^5.1.0"
     "css-tree" "^1.1.3"

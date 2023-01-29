@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import { BarChart } from 'react-native-chart-kit'
 import WorkSleepChartView from './WorkSleepChartView/WorkSleepChartView'
 import MeTime from './MeTime/MeTime'
+import Profile from './Profile/Profile'
 
-const DashBoard = ({navigation}) => {
+const Dashboard = ({navigation}) => {
  
 
     return (
@@ -13,16 +14,18 @@ const DashBoard = ({navigation}) => {
             {/* <Text>DashBoard</Text> */}
             <WorkSleepChartView />
             <MeTime />
+            <Profile />
         </ScrollView>
         </View>
     )
 }
 
-export default DashBoard
+export default Dashboard
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal:20,
+        // marginHorizontal:20,
+        paddingHorizontal: 20,
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
