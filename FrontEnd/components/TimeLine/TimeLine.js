@@ -106,9 +106,13 @@ const TimeLine = () => {
         const fromTime = value[0]
         const toTime = value[1]
         return (
+            <View style={{position:'relative', paddingTop: 10}}>
                 <View style={styles.item}>
                     <Text style={styles.title}>{fromTime + ' - ' + toTime}</Text>
                 </View>
+                <View style={[styles.item, value[2] === 'work' ? styles.itemWork : value[2] === 'sleep' ? styles.itemSleep : styles.itemHome]}>
+                    </View>
+            </View>
         )
     };
 
@@ -116,7 +120,7 @@ const TimeLine = () => {
         return generateSequentialHrs().map((item, index) => {
             return (
                 <>
-                    <View style={{borderRadius: 5, backgroundColor: 'coral', marginVertical:20, padding: 10}}>
+                    <View style={{borderRadius: 5, backgroundColor: '#FF824C', marginVertical:20, padding: 10}}>
                         <Text style={{fontSize:18}}>Tasks at time {item[0] + ' - ' + item[1]}</Text>
                         {renderTimeLineTasks()}
                     </View>
@@ -128,7 +132,7 @@ const TimeLine = () => {
     return (
         <View style={styles.container}>
             {/* <Text>TimeLine</Text> */}
-            <ScrollView style={{flexDirection:'column'}}>
+            {/* <ScrollView style={{flexDirection:'column'}}>
             <View style={{backgroundColor: 'red', borderRadius: 10, paddingTop: 10}}>
                 <Text>Work Time</Text>
                 <FlatList
@@ -158,7 +162,11 @@ const TimeLine = () => {
                     renderItem={({ item, index }) => getHrsItem(item, index)}
                 />
             </View>
-            </ScrollView>
+            </ScrollView> */}
+            <FlatList
+                    data={totalTT}
+                    renderItem={({ item, index }) => getHrsItem(item, index)}
+                />
             <ScrollView>
                 <Text>Sample</Text>
                 {getTasksUnderHrs()}
@@ -178,12 +186,40 @@ const styles = StyleSheet.create({
     },
     item: {
         width: 200,
-        backgroundColor: 'lightblue',
-        paddingHorizontal: 8,
-        paddingVertical: 5,
+        backgroundColor: '#79B1BB',
+        // paddingHorizontal: 8,
+        paddingStart:4,
+        paddingVertical: 2,
+        // paddingTop: 5,
         borderRadius: 5,
-        marginVertical: 8,
+        marginVertical: 5,
         marginHorizontal: 16,
+        zIndex: 2,
+        // position: 'relative'
+    },
+    itemWork: {
+        position: 'absolute',
+        marginLeft: -10,
+        width: 250,
+        height: 80,
+        zIndex:1,
+        backgroundColor: '#dc2f2f',
+    },
+    itemSleep: {
+        position: 'absolute',
+        marginLeft: -10,
+        width: 250,
+        height: 100,
+        zIndex:1,
+        backgroundColor: '#93DCAF',
+    },
+    itemHome: {
+        position: 'absolute',
+        marginLeft: -10,
+        width: 250,
+        height: 100,
+        zIndex:1,
+        backgroundColor: '#7D99E8',
     },
     title: {
         fontSize: 32,
