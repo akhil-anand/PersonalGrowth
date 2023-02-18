@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View ,Button } from 'react-native'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 import React, { useState } from 'react'
 import Slider from '@react-native-community/slider'
 
-const DayHoursManagment = ({navigation}) => {
+const DayHoursManagment = ({ navigation }) => {
     const [hoursManagement, setHoursManagement] = useState({ work: 11, home: 3, sleep: 8 })
     const [currentSlider, setCurrentSlider] = useState(null)
 
@@ -35,13 +35,16 @@ const DayHoursManagment = ({navigation}) => {
 
     return (
         <View style={styles.container}>
-            <Text style={{fontSize:20, fontStyle: 'italic', marginBottom:20}}>Set Your Day</Text>
+            <Text style={{ fontSize: 20, fontStyle: 'italic', marginBottom: 20 }}>Set Your Day</Text>
             <View>
-                <Text>Work</Text>
+                <View style={styles.sliderTitle}>
+                    <Text>Work</Text>
+                    <Text>{hoursManagement.work}</Text>
+                </View>
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={24}
+                    maximumValue={12}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"
@@ -51,11 +54,14 @@ const DayHoursManagment = ({navigation}) => {
                 />
             </View>
             <View>
-                <Text>home</Text>
+                <View style={styles.sliderTitle}>
+                    <Text>home</Text>
+                    <Text>{hoursManagement.home}</Text>
+                </View>
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={24}
+                    maximumValue={12}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"
@@ -65,11 +71,14 @@ const DayHoursManagment = ({navigation}) => {
                 />
             </View>
             <View>
-                <Text>sleep</Text>
+                <View style={styles.sliderTitle}>
+                    <Text>sleep</Text>
+                    <Text>{hoursManagement.sleep}</Text>
+                </View>
                 <Slider
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={24}
+                    maximumValue={12}
                     step={1}
                     minimumTrackTintColor="#000000"
                     maximumTrackTintColor="#000000"
@@ -78,9 +87,13 @@ const DayHoursManagment = ({navigation}) => {
                     onValueChange={(value) => { handleHoursManagement(value, 'sleep') }}
                 />
             </View>
+            <View style={styles.sliderTitle}>
+                <Text>{(hoursManagement.work + hoursManagement.home + hoursManagement.sleep) === 24 ? 'slider values are correct' : 'slider values are incorrect' }</Text>
+                <Text>:{hoursManagement.work + hoursManagement.home + hoursManagement.sleep}</Text>
+            </View>
             <View>
                 <Button
-                    onPress={()=>{ navigation.push('Dashboard')}}
+                    onPress={() => { navigation.push('Dashboard') }}
                     title="Continue"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
@@ -98,5 +111,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    sliderTitle: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
     }
 })
