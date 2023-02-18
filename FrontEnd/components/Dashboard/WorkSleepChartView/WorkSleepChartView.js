@@ -1,8 +1,13 @@
 import { StyleSheet, Text, View, Button, ScrollView, Dimensions, useWindowDimensions } from 'react-native'
 import React, { useState } from 'react'
 import { BarChart } from 'react-native-chart-kit'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const WorkSleepChartView = () => {
+
+    const dispatch = useDispatch()
+    const { scheduledHours, actualHours } = useSelector((state)=> state.hoursManagementReducer)
 
     const { height, width } = useWindowDimensions()
     const [chartData, setChartData] = useState({
@@ -10,7 +15,7 @@ const WorkSleepChartView = () => {
                 labels: ["Estimated", "Actual"],
                 datasets: [
                   {
-                    data: [11, 12]
+                    data: [scheduledHours.work, actualHours.work]
                   }
                 ]
             
@@ -19,7 +24,7 @@ const WorkSleepChartView = () => {
                 labels: ["Estimated", "Actual"],
                 datasets: [
                   {
-                    data: [8, 5]
+                    data: [scheduledHours.sleep, actualHours.sleep]
                   }
                 ]
             

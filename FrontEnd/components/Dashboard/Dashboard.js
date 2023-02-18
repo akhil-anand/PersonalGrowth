@@ -5,8 +5,13 @@ import WorkSleepChartView from './WorkSleepChartView/WorkSleepChartView'
 import MeTime from './MeTime/MeTime'
 import Profile from './Profile/Profile'
 import Suggestions from './Suggestions/Suggestions'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const Dashboard = ({ navigation }) => {
+
+    const dispatch = useDispatch()
+    const { scheduledHours } = useSelector((state)=> state.hoursManagementReducer)
 
 
     return (

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Slider from '@react-native-community/slider'
 import { useDispatch } from 'react-redux'
-import { SET_HOURS } from '../../store/Reducers/hoursManagementReducer'
+import { SET_SCHEDULE_HOURS } from '../../store/Reducers/hoursManagementReducer'
 
 const DayHoursManagment = ({ navigation }) => {
 
@@ -105,7 +105,7 @@ const DayHoursManagment = ({ navigation }) => {
             </View>
             <View>
                 <Button
-                    onPress={() => { dispatch(SET_HOURS(hoursManagement)) ;navigation.push('Dashboard') }}
+                    onPress={() => { dispatch(SET_SCHEDULE_HOURS(hoursManagement)) ;navigation.push('Dashboard') }}
                     title="Continue"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
