@@ -1,11 +1,23 @@
 import { StyleSheet, Text, View, Button } from 'react-native'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import Slider from '@react-native-community/slider'
+import { useDispatch } from 'react-redux'
+import { SET_HOURS } from '../../store/Reducers/hoursManagementReducer'
 
 const DayHoursManagment = ({ navigation }) => {
-    const [hoursManagement, setHoursManagement] = useState({ work: 11, home: 3, sleep: 8 })
+
+    const dispatch = useDispatch()
+    const { scheduledHours } = useSelector((state)=> state.hoursManagementReducer)
+
+    const [hoursManagement, setHoursManagement] = useState({})
     const [currentSlider, setCurrentSlider] = useState(null)
+
+    useEffect(()=>{
+        setHoursManagement(scheduledHours)
+    },[])
+
 
     const handleHoursManagement = (value, type) => {
         const otherTypes = Object.keys(hoursManagement).filter(item => item !== type)
@@ -93,7 +105,7 @@ const DayHoursManagment = ({ navigation }) => {
             </View>
             <View>
                 <Button
-                    onPress={() => { navigation.push('Dashboard') }}
+                    onPress={() => { dispatch(SET_HOURS(hoursManagement)) ;navigation.push('Dashboard') }}
                     title="Continue"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"

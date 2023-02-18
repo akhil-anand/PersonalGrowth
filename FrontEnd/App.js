@@ -6,12 +6,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DayHoursManagment from './components/DayHoursManagment/DayHoursManagment';
 import Dashboard from './components/Dashboard/Dashboard';
 import TimeLine from './components/TimeLine/TimeLine';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 
 export default function App() {
 
   const Stack = createNativeStackNavigator()
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -31,7 +34,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
-
+    </Provider>
   );
 }
 
