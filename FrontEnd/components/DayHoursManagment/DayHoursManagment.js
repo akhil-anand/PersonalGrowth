@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 import Slider from '@react-native-community/slider'
 import { useDispatch } from 'react-redux'
 import { SET_SCHEDULE_HOURS } from '../../store/Reducers/hoursManagementReducer'
+// import Notifications from '../Notifications/Notifications'
+import NotificationsComponent from '../Notifications/Notifications'
 
 const DayHoursManagment = ({ navigation }) => {
 
@@ -111,6 +113,7 @@ const DayHoursManagment = ({ navigation }) => {
                     accessibilityLabel="Learn more about this purple button"
                 />
             </View>
+            <NotificationsComponent />
         </View>
     )
 }
